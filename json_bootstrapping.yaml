@@ -100,8 +100,12 @@
     command: git add .
     args:
       chdir: /home/ubuntu/cuda_waf_config
-  - shell: git commit -m "new configuration"
-  - shell: git push origin master
+  - command: git commit -m "new configuration"
+    args:
+      chdir: /home/ubuntu/cuda_waf_config
+  - command: git push origin master
+    args:
+      chdir: /home/ubuntu/cuda_waf_config
     register: shell_result
   - debug: msg="{{ shell_result.stderr }}"
   
