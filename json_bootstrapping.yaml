@@ -9,9 +9,9 @@
 - hosts: 192.168.10.252
   tasks:
   - set_fact:
-      #waf_url: '192.168.10.21:8000/restapi/v3'
-      #waf_user: 'admin'
-      #waf_password: 'se_training2019!!!'
+      #waf_url: '<ip>:<port>/restapi/v3'
+      #waf_user: '<api user>'
+      #waf_password: '<api user password>'
       #dst_dir: '/home/ubuntu/cuda_waf_config/'
 
 ### WAF LOGIN TOKEN GENERATION ###
@@ -99,13 +99,13 @@
   - name: Adding the configuration changes to GitHub
     command: git add .
     args:
-      chdir: /home/ubuntu/cuda_waf_config
+      chdir: "{{ dst_dir }}"
   - command: git commit -m "new configuration"
     args:
-      chdir: /home/ubuntu/cuda_waf_config
+      chdir: "{{ dst_dir }}"
   - command: git push origin master
     args:
-      chdir: /home/ubuntu/cuda_waf_config
+      chdir: "{{ dst_dir }}"
     register: shell_result
   - debug: msg="{{ shell_result.stderr }}"
   
