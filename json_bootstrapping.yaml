@@ -10,7 +10,7 @@
   tasks:
   - name: Set WAF URL
     set_fact:
-      waf_url: '18.144.35.223:8000/restapi/v3'
+      waf_url: '192.168.10.21:8000/restapi/v3'
       #service_name: 'Service_08'
       #service_ip: '10.36.73.222'
       #service_port: '1111'
@@ -18,7 +18,7 @@
       #server_port: '80'
       waf_user: 'admin'
       waf_password: 'se_training2019!!!'
-      dst_dir: '/users/aravindan/Documents/Dev-Tools/cuda_waf_config/'
+      dst_dir: 'home/ubuntu/cuda_waf_config/'
 
 ### WAF LOGIN TOKEN GENERATION ###
   - name: Getting the login token
@@ -104,7 +104,8 @@
 
 ### Commiting to Github repo
   - name: Adding the configuration changes to GitHub
-    shell: git add .
+    shell: cd /home/ubuntu/cuda_waf_config
+  - shell: git add .
   - shell: git commit -m "new configuration"
   - shell: git push origin master
     register: shell_result
