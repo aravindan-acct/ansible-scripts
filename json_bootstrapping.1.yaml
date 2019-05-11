@@ -8,11 +8,10 @@
 ### WAF DETAILS ###
 - hosts: all
   tasks:
-### Commiting to Github repo
   - name: Adding the configuration changes to GitHub
     shell: echo "hello"
     register: data
-  - debug: msg= {{ data.output }}
+  - debug: msg="{{ data.output }}"
 
 
   
