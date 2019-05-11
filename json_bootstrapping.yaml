@@ -93,11 +93,9 @@
     command: git add .
     #args:
      # chdir: "{{ dst_dir }}"
-  - name: Committing
     command: git commit -m "new configuration"
     #args:
      # chdir: "{{ dst_dir }}"
-  - name: Pushing the code
     command: git push origin master
     args:
       chdir: "{{ dst_dir }}"
