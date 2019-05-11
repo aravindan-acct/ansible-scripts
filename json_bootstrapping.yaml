@@ -91,12 +91,12 @@
 ### Commiting to Github repo
   - name: Adding the configuration changes to GitHub
     command: git add .
-    #args:
-     # chdir: "{{ dst_dir }}"
-    command: git commit -m "new configuration"
-    #args:
-     # chdir: "{{ dst_dir }}"
-    command: git push origin master
+    args:
+      chdir: "{{ dst_dir }}"
+  - command: git commit -m "new configuration"
+    args:
+      chdir: "{{ dst_dir }}"
+  - command: git push origin master
     args:
       chdir: "{{ dst_dir }}"
     register: shell_result
