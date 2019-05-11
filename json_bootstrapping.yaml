@@ -6,7 +6,7 @@
 ### when the username and password is provided in the script
 
 ### WAF DETAILS ###
-- hosts: 192.168.10.252
+- hosts: all
   tasks:
   - set_fact:
       #waf_url: '<ip>:<port>/restapi/v3'
@@ -100,10 +100,10 @@
     command: git add .
     args:
       chdir: "{{ dst_dir }}"
-  - command: git commit -m "new configuration"
+    command: git commit -m "new configuration"
     args:
       chdir: "{{ dst_dir }}"
-  - command: git push origin master
+    command: git push origin master
     args:
       chdir: "{{ dst_dir }}"
     register: shell_result
