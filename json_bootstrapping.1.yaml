@@ -6,14 +6,11 @@
 ### when the username and password is provided in the script
 
 ### WAF DETAILS ###
-- hosts: 192.168.10.252
+- hosts: all
   tasks:
 ### Commiting to Github repo
   - name: Adding the configuration changes to GitHub
     shell: echo "hello"
-    register: shell_result
-  - debug: msg="{{ shell_result.stdout }}"
-  
 
 
   
