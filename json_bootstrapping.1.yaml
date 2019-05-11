@@ -11,6 +11,8 @@
 ### Commiting to Github repo
   - name: Adding the configuration changes to GitHub
     shell: echo "hello"
+    register: data
+  - debug: msg= {{ data.output }}
 
 
   
