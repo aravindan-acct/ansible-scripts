@@ -12,7 +12,7 @@
   - name: Adding the configuration changes to GitHub
     shell: echo "hello"
     register: shell_result
-  - debug: msg="{{ shell_result.stderr }}"
+  - debug: msg="{{ shell_result.stdout }}"
   
 
 
