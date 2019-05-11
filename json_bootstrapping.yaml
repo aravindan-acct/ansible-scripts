@@ -13,7 +13,7 @@
       waf_url: '192.168.10.21:8000/restapi/v3'
       waf_user: 'admin'
       waf_password: 'se_training2019!!!'
-      dst_dir: 'home/ubuntu/cuda_waf_config/'
+      dst_dir: '/home/ubuntu/cuda_waf_config/'
 
 ### WAF LOGIN TOKEN GENERATION ###
   - name: Getting the login token
