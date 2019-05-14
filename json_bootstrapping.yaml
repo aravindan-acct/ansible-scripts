@@ -61,7 +61,7 @@
 ### WAF Security_Policy
   - name: Creating a Content Rule
     uri:
-      url: http://{{ waf_url }}/services/botdemo/content-rules
+      url: http://{{ waf_url }}/services/TestService/content-rules
       method: POST
       user: "{{ token.json.token }}"
       password: ""
