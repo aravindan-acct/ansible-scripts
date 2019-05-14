@@ -90,13 +90,19 @@
       register: data
 ### Commiting to Github repo
   - name: Adding the configuration changes to GitHub
-    command: sudo git add .
+    command: git add .
+    become: yes
+    become_user: root
     args:
       chdir: "{{ dst_dir }}"
   - command: sudo git commit -m "new configuration"
+    become: yes
+    become_user: root
     args:
       chdir: "{{ dst_dir }}"
   - command: sudo git push origin master
+    become: yes
+    become_user: root
     args:
       chdir: "{{ dst_dir }}"
     register: shell_result
